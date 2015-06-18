@@ -1,0 +1,86 @@
+.login-modal{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.3);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.login-modal:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.login-modal > div {
+	font-family: $main-text, sans-serif;
+	width: 40%;
+	position: relative;
+	margin: 20% auto;
+	padding: 10px 20px 13px 20px;
+	border-radius: 5px;
+	background: linen;
+	border: 2px double slategrey;
+	& h2{
+		display: inline-block;
+		width: 50%;
+	}
+	& #close-button{
+		float: right;
+		text-decoration: none;
+		&:hover{
+			color: lightgrey;
+		}
+	}
+}
+
+form{
+	& label{
+		display:inline-block;
+		width: 35%;
+		text-align: right;
+		margin-right: 3%;
+	}
+	& input, label{
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+	& input{
+		font-family: $main-text;
+		font-size: 12pt;
+		display:inline-block;
+		&:focus{
+			outline-color: $light-orange;
+			outline-width: medium;
+		}
+	}
+	& #login-submit{
+		background-color: white;
+		margin-left: 50%;
+		border: solid $light-orange 1px;
+		&:hover{
+			background-color: lightgrey;
+		}
+	}
+}
+
+.form-separator{
+	border-bottom: solid $dark-orange 1px;
+	margin: 3% 0 3% 0;
+}
+
+#signup-button{
+	margin-left: 2%;
+	text-decoration: none;
+	color: $dark-orange;
+	&:hover{
+		color: $light-orange;
+	}
+}
+

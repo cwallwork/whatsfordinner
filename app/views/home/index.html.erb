@@ -1,3 +1,34 @@
 <header class="home-header">
 	<h1 class="title-text"> What's for Dinner? </h1>
+	<% if !@session %> 
+		<a class="login-button" href="#open-modal">Login/Signup</a>
+	<% else %>
+		Welcome <%= @user.name %>
+	<% end %>
+
 </header>
+<div id="main-image">
+	<%= image_tag("quiche.jpg") %>
+</div>
+
+
+
+<div id="open-modal" class="login-modal">
+	<div>
+		<h2>Login</h2>
+		<a href="#close" id="close-button">X</a>
+		<div class="form-separator"></div>
+
+		<%= form_for @user do |f| %>
+			<%= f.label :email %>
+			<%= f.email_field :email, required: true %>
+			<%= f.label :password %>
+			<%=f.text_field :password, required: true %>
+			<%=f.submit "login", id: 'login-submit'%>
+		<% end %>
+
+		<div class="form-separator"></div>
+		New User?
+		<a id="signup-button" href="<%= signup_path %>">Sign Up Here!</a>
+	</div>
+</div>
