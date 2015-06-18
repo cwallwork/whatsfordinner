@@ -1,0 +1,13 @@
+.title-text{
+	color: $grey-text;
+	font-family: $title-font;
+	font-size: 36pt;
+	font-style: italic;
+}
+
+.home-header {
+	background-color: $light-orange;
+	border-bottom: $dark-orange solid 3px;
+	height: 20%;
+	padding: 20px 10% 15px 5%
+}
